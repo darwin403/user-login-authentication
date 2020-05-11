@@ -33,7 +33,7 @@ function Index() {
 
   useEffect(() => {
     // load all posts on mount
-    axios.get("http://localhost:8080/posts").then(
+    axios.get("/posts").then(
       posts => {
         setAllPosts(posts.data);
       },
@@ -45,7 +45,7 @@ function Index() {
     // load previous user session
     const token = Cookies.get("token");
     if (!token) return;
-    axios.get(`http://localhost:8080/users/${token}`).then(
+    axios.get(`/users/${token}`).then(
       user => {
         setUser(user.data);
       },
@@ -66,7 +66,7 @@ function Index() {
   // load user post
   const fetchUserPosts = () => {
     axios
-      .post("http://localhost:8080/posts", {
+      .post("/posts", {
         token: user && user.token,
       })
       .then(
@@ -82,7 +82,7 @@ function Index() {
   // create post
   const createPost = () => {
     axios
-      .put("http://localhost:8080/posts", {
+      .put("/posts", {
         title: postTitle,
         content: postContent,
         token: user && user.token,
