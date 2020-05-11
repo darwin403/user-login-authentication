@@ -11,6 +11,7 @@
     "axios": "^0.19.2",
     "bulma": "^0.8.2",
     "faker": "^4.1.0",
+    "gh-pages": "^2.2.0",
     "js-cookie": "^2.2.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -23,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
