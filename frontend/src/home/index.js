@@ -33,7 +33,7 @@ function Index() {
 
   useEffect(() => {
     // load all posts on mount
-    axios.get("/posts").then(
+    axios.get("http://138.197.199.81:8080/posts").then(
       posts => {
         setAllPosts(posts.data);
       },
@@ -66,7 +66,7 @@ function Index() {
   // load user post
   const fetchUserPosts = () => {
     axios
-      .post("/posts", {
+      .post("http://138.197.199.81:8080/posts", {
         token: user && user.token,
       })
       .then(
@@ -82,7 +82,7 @@ function Index() {
   // create post
   const createPost = () => {
     axios
-      .put("/posts", {
+      .put("http://138.197.199.81:8080/posts", {
         title: postTitle,
         content: postContent,
         token: user && user.token,

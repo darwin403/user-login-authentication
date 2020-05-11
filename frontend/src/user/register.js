@@ -12,7 +12,7 @@ export default function Register(props) {
 
   const registerUser = () => {
     axios
-      .put("/users", {
+      .put("http://138.197.199.81:8080/users", {
         name,
         email,
         password,

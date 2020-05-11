@@ -11,7 +11,7 @@ export default function Login(props) {
 
   const loginUser = () => {
     axios
-      .post("/users", {
+      .post("http://138.197.199.81:8080/users", {
         email,
         password,
       })
